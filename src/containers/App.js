@@ -2,6 +2,9 @@ import React from "react";
 import uuid from "uuid";
 import style from "./App.css";
 import {
+  hot
+} from 'react-hot-loader';
+import {
   Title
 } from "../components/Title";
 import {
@@ -42,10 +45,15 @@ class App extends React.Component {
     });
   }
   render() {
-    return ( <
+    return( <
       div className = {
         style.TodoApp
       } >
+      <
+      Title data = {
+        this.state.data
+      }
+      />
       <
       TodoList data = {
         this.state.data
@@ -53,11 +61,7 @@ class App extends React.Component {
       remove = {
         this.removeTodo
       }
-      / > <
-      Title data = {
-        this.state.data
-      }
-      /> < /
+      / >  < /
       div >
     );
   }
